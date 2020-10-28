@@ -1,23 +1,24 @@
 package tests;
 
+
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.Test;
 
-import static com.codeborne.selenide.Condition.*;
-import static com.codeborne.selenide.Selectors.*;
+import static com.codeborne.selenide.Condition.value;
+import static com.codeborne.selenide.Condition.visible;
+import static com.codeborne.selenide.Selectors.byName;
 import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
 
-public class AviataTests extends TestBase {
-
+public class AviataNegativeTests extends TestBase {
     @Test
-    void simpleUITest(){
+    void simpleUINegativeTest(){
         Configuration.timeout = 15000;
         step ("Заходим на главную страницу", () -> {
             open("https://aviata.kz/");
         });
         step("Нажимаем на предлагаемые популярные направления",() -> {
-            $$(".ux-pop-orig").find(visible).sibling(1).click();
+            $$(".ux-pop-orig").find(visible).sibling(0).click();
             $$(".ux-pop-dest").find(visible).sibling(0).click();
         });
 
@@ -38,3 +39,4 @@ public class AviataTests extends TestBase {
         closeWebDriver();
     }
 }
+
