@@ -36,7 +36,6 @@ public class AviataNegativeTests extends TestBase {
             $((byName("to"))).shouldHave(value("Алматы"));
         });
 
-        closeWebDriver();
     }
 }
 
