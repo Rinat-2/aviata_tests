@@ -12,7 +12,7 @@ public class AviataTests extends TestBase {
 
     @Test
     void simpleUITest(){
-        Configuration.timeout = 15000;
+        Configuration.timeout = 60000;
         step ("Заходим на главную страницу", () -> {
             open("https://aviata.kz/");
         });
